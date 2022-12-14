@@ -1,7 +1,12 @@
-let basicSalary = ("enter your basic salary");
-let benefits = ("enter your benefits ");
-grossSalary = parseInt(basicSalary)+parseInt(benefits);
+basicSalary = prompt("enter your basic salary");
+benefits = prompt("enter your benefits ");
+
+basicInput = basicSalary.value;
+benefitsInput = benefits.value;
+grossSalary = ("basicSalary.value + benefits.value");
+
 console.log(`your gross salary is ${grossSalary}`)
+
 function getPayeefromSalary (grossSalary){
     let Payee = 0;
     if(grossSalary <= 24,000){
@@ -19,50 +24,50 @@ let Payeerate = getPayeefromSalary(grossSalary)
 console.log(`your Payee tax is ${Payeerate}`)
  
 function getNHIFdeductions (grossSalary){
- let deductions = 0;
- if (grossSalary <= 5,999){
+ let deduction = 0;
+ if (grossSalary <= 5999){
     deduction = 150
 }
-  else if (grossSalary >= 6,000 && grossSalary <= 7,999){
+  else if (grossSalary >= 6000 && grossSalary <= 7999){
     deduction = 300
 }
-else if (grossSalary >= 8,000 && grossSalary <= 11,999){
+else if (grossSalary >= 8000 && grossSalary <= 11999){
     deduction = 400
 }
- else if (grossSalary >= 12,000 && grossSalary14,999){
+ else if (grossSalary >= 12000 && grossSalary <= 14999){
     deduction = 500
 }
- else if (grossSalary >= 15,000 && grossSalary <= 19,999){
+ else if (grossSalary >= 15000 && grossSalary <= 19999){
     deduction = 600
 }
- else if (grossSalary >= 20,000 && grossSalary <= 24,999){
+ else if (grossSalary >= 20000 && grossSalary <= 24999){
     deduction = 750
 }
- else if (grossSalary >= 25,000 && grossSalary <= 29,999){
+ else if (grossSalary >= 25000 && grossSalary <= 29999){
     deduction = 850
 }
-else if ( grossSalary >= 30,000 && grossSalary <= 34,999){
+else if ( grossSalary >= 30000 && grossSalary <= 34999){
     deduction = 1000
 }
- else if (grossSalary >= 40,000 && grossSalary <= 44,999){
+ else if (grossSalary >= 40000 && grossSalary <= 44999){
     deduction = 1100
 }
-else if ( grossSalary >= 45,000 && grossSalary <= 49,999){
+else if ( grossSalary >= 45000 && grossSalary <= 49999){
     deduction = 1200
 }
-else if(grossSalary >=60,000 && grossSalary<=69,999){
+else if(grossSalary >=60000 && grossSalary<=69999){
     deduction = 1300
 }
-else if(grossSalary >=70,000 && grossSalary<=79,999){
+else if(grossSalary >=70000 && grossSalary<=79999){
     deduction = 1400
 }
 else if(grossSalary >=80,000 && grossSalary<=89,999){
     deduction = 1500
 }
-else if(grossSalary >=90,000 && grossSalary<=99,999){
+else if(grossSalary >=90000 && grossSalary<=99999){
     deduction = 1600
 }
-else if(grossSalary >=100,000){
+else if(grossSalary >=100000){
     deduction = 1700
 }
 return deduction
@@ -71,19 +76,19 @@ return deduction
 
 let NHIFrate = getNHIFdeductions(grossSalary);
 console.log(`Your NHIF deduction is ${NHIFrate}`)
+
 function getNSSFdeductions (grossSalary){
     deduction = grossSalary*0.05
-    if (deduction > 300){
+    if (grossSalary >= 6000){
         deduction = 300
     }
     return deduction
 }
 let NSSFdeduction = getNSSFdeductions(grossSalary);
 console.log(`Your NSSF deduction is $ {NSSF deduction}`)
+
 function Netsalary(){
     let net = grossSalary -(Payeerate + NSSFdeduction)
     return Netsalary
 }
 console.log (`Your Net salary is ${Netsalary()}`);
-
-
