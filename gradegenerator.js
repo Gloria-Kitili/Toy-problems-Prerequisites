@@ -4,23 +4,24 @@ C -  59 to 49,
 D - 40 to 49,
 E - less 40.*/
 
-let score =70;
-let letter;
 
-if (score >= 79){
- letter="A"
+function Gradegenerator(student, grade) {
+    student = prompt("Enter your name: ");
+    grade = prompt("Enter your grade: ");
+    if (grade >= 79 && grade <= 100) {
+        console.log(`Today ${student} you scored grade of A`)
+    }
+    else if (grade >= 60 && grade < 79) {
+        console.log(`Today ${student} you scored grade of B`)
+    }
+    else if (grade >= 49 && grade <= 59) {
+        console.log(`Today ${student} you scored grade of C`)
+    }
+    else if (grade >= 40 && grade < 49) {
+        console.log(`Today ${student} you scored grade of D`)
+    }
+    else if (grade >= 0 && grade < 40) {
+        console.log(`Today ${student} you scored grade of E`)
+    }
 }
-else if (score>=60){
- letter ="B";
-}
-else if(score>=59){
-    letter="C";
-}
-else if(score>=40){
-    letter="D";
-}
-else{
-    letter="E";
-}
-console.log("This is your final grade" + letter);
-
+Gradegenerator();
